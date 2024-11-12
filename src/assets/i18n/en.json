@@ -1,0 +1,13 @@
+{
+ "sidenav": {
+  "DASHBOARD": "Dashboard",
+  "STATISTICS": "Statistics",
+  "CHALLENGES": "Challenges",
+  "USER_STATS": "User Stats",
+  "SETTINGS": "Settings",
+  "PLAYERS": "Players",
+  "LEAGUES": "Leagues",
+  "EVENTS": "Events",
+  "LOG_OUT": "Log out"
+ }
+}

@@ -2,6 +2,8 @@
   <button mat-icon-button (click)="collapsed.set(!collapsed())">
     <mat-icon>menu</mat-icon>
   </button>
+  <button mat-button (click)="translateText('en')">English</button>
+  <button mat-button (click)="translateText('pl')">Polski</button>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">

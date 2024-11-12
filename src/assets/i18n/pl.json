@@ -1,0 +1,13 @@
+{
+  "sidenav": {
+    "DASHBOARD": "Panel Główny",
+    "STATISTICS": "Statystyki",
+    "CHALLENGES": "Wyzwania",
+    "USER_STATS": "Statystyki użytkownika",
+    "SETTINGS": "Ustawienia",
+    "PLAYERS": "Zawodnicy",
+    "LEAGUES": "Ligi",
+    "EVENTS": "Wydarzenia",
+    "LOG_OUT": "Wyloguj"
+  }
+}

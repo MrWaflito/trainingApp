@@ -4,6 +4,13 @@
   </button>
   <button mat-button (click)="translateText('en')">English</button>
   <button mat-button (click)="translateText('pl')">Polski</button>
+  <button mat-icon-button (click)="darkMode.set(!darkMode( ))">
+    @if(darkMode()) {
+      <mat-icon>light_mode</mat-icon>
+    } @else {
+      <mat-icon>dark_mode</mat-icon>
+    }
+  </button>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">

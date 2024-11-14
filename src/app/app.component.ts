@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidevavComponent } from './components/sidevav/sidevav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,7 +24,12 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   collapsed = signal(false);
   sidenavWidth = computed(() => (this.collapsed() ? '65px' : '250px'));
+  darkMode = signal(false);
+  setDarkMode = effect(() => {
+    document.documentElement.classList.toggle('dark', this.darkMode());
+  });
   translate: TranslateService = inject(TranslateService);
+
   translateText(lang: string) {
     this.translate.use(lang);
   }

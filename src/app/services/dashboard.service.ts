@@ -17,6 +17,16 @@ export class DashboardService {
       label: 'Player2',
       content: PlayerCardComponent,
     },
+    {
+      id: 3,
+      label: 'Player3',
+      content: PlayerCardComponent,
+    },
+    {
+      id: 4,
+      label: 'Player4',
+      content: PlayerCardComponent,
+    },
   ]);
   addedWidgets = signal<Widget[]>([]);
 
@@ -35,7 +45,7 @@ export class DashboardService {
           widget.content = content;
         }
       });
-      this.addedWidgets.set(widgets)
+      this.addedWidgets.set(widgets);
     }
   }
 
@@ -53,12 +63,30 @@ export class DashboardService {
     }
   }
 
+  updateWidgetPosition(sourceWidgetId: number, targetWidgetId: number) {
+    const srcIndex = this.addedWidgets().findIndex(
+      (w) => w.id === sourceWidgetId
+    );
+    if (srcIndex === -1) {
+      return;
+    }
+    const newWidgets = [...this.addedWidgets()];
+    const srcWidget = newWidgets.splice(srcIndex, 1)[0];
+    const targetIndex = newWidgets.findIndex((w) => w.id === targetWidgetId);
+    if (targetIndex === -1) {
+      return;
+    }
+    const insertAt = targetIndex === srcIndex ? targetIndex + 1 : targetIndex;
+    newWidgets.splice(insertAt, 0, srcWidget);
+    this.addedWidgets.set(newWidgets);
+  }
+
   removeWidget(id: number) {
     this.addedWidgets.set(this.addedWidgets().filter((w) => w.id !== id));
   }
 
   constructor() {
-    this.fetchWidgets()
+    this.fetchWidgets();
   }
 
   saveWidgets = effect(() => {

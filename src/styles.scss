@@ -16,6 +16,10 @@ $custom-theme: mat.define-theme((color: (use-system-variables: true,
       ),
     ));
 
+.cdk-drop-list-dragging {
+  opacity: 0.5;
+}
+
 html {
   --sys-primary: rgb(54 94 157);
   --sys-surface-tint: rgb(54 94 157);

@@ -1,5 +1,5 @@
 
-<div class="container mat-elevation-z3">
+<div class="container mat-elevation-z3" cdkDrag cdkDragPreviewContainer="parent">
 <h3 class="m-0">
   {{data().label}}
 </h3>
@@ -10,4 +10,5 @@
 @if(showOptions()){
   <app-widget-options [(showOptions)]="showOptions" [data]="data()"></app-widget-options>
 }
+<div *cdkDragPlaceholder></div>
 </div>
